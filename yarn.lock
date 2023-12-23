@@ -1316,32 +1316,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"default-frontend-official-starter@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "default-frontend-official-starter@workspace:."
-  dependencies:
-    "@types/node": 20.5.7
-    "@types/react": 18.2.21
-    "@types/react-dom": 18.2.7
-    "@typescript-eslint/eslint-plugin": 6.5.0
-    "@typescript-eslint/parser": 6.5.0
-    "@vitejs/plugin-react": 4.0.4
-    axios: 1.5.0
-    eslint: 8.48.0
-    eslint-plugin-react: 7.33.2
-    eslint-plugin-react-hooks: 4.6.0
-    eslint-plugin-react-refresh: 0.4.3
-    prettier: 3.0.2
-    react: 18.2.0
-    react-dom: 18.2.0
-    react-router: 6.15.0
-    react-router-dom: 6.15.0
-    sass: 1.66.1
-    typescript: 5.2.2
-    vite: 4.4.9
-  languageName: unknown
-  linkType: soft
-
 "define-properties@npm:^1.1.3, define-properties@npm:^1.1.4, define-properties@npm:^1.2.0":
   version: 1.2.0
   resolution: "define-properties@npm:1.2.0"
@@ -3643,6 +3617,32 @@ __metadata:
   checksum: c049a7fc4deb9a7e9b481ae3d424cc793cb4845daa690bc5a05d428bf41bf231ced49b4cf0c9e77f9d42fdb3d20d6187619fc586605f5eabe995a316da8d377c
   languageName: node
   linkType: hard
+
+"sql-query-executor@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "sql-query-executor@workspace:."
+  dependencies:
+    "@types/node": 20.5.7
+    "@types/react": 18.2.21
+    "@types/react-dom": 18.2.7
+    "@typescript-eslint/eslint-plugin": 6.5.0
+    "@typescript-eslint/parser": 6.5.0
+    "@vitejs/plugin-react": 4.0.4
+    axios: 1.5.0
+    eslint: 8.48.0
+    eslint-plugin-react: 7.33.2
+    eslint-plugin-react-hooks: 4.6.0
+    eslint-plugin-react-refresh: 0.4.3
+    prettier: 3.0.2
+    react: 18.2.0
+    react-dom: 18.2.0
+    react-router: 6.15.0
+    react-router-dom: 6.15.0
+    sass: 1.66.1
+    typescript: 5.2.2
+    vite: 4.4.9
+  languageName: unknown
+  linkType: soft
 
 "ssri@npm:^10.0.0":
   version: 10.0.5
