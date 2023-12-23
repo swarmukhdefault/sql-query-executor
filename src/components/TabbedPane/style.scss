@@ -1,0 +1,37 @@
+div.tabbed-pane {
+  div[role='tablist'] {
+    border-bottom: 1px solid lightgray;
+    display: flex;
+
+    div {
+      align-items: center;
+      background-color: lightgray;
+      border-radius: 4px 4px 0 0;
+      border: 1px solid gray;
+      cursor: pointer;
+      display: flex;
+      min-width: 112px;
+      padding: 4px 8px;
+      justify-content: space-between;
+
+      button.close-tab {
+        background-color: lightcoral;
+        border: 1px solid crimson;
+        border-radius: 4px;
+        cursor: pointer;
+        padding: 2px 6px;
+      }
+    }
+
+    div[tabindex='0'] {
+      background-color: lightgreen;
+    }
+
+    #add-tab {
+      border: 1px solid gray;
+      cursor: pointer;
+      padding: 2px 10px;
+      border-radius: 4px 4px 0 0;
+    }
+  }
+}

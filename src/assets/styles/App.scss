@@ -1,48 +1,16 @@
 #app {
-  // max-width: 1280px;
   margin: 0 auto;
-  // padding: 2rem;
-
   width: 720px;
 
   h1 {
     text-align: center;
   }
 
-  #query-input-form {
-    label {
-      display: block;
-      padding-bottom: 4px;
-    }
-
-    textarea {
-      border-radius: 4px;
-      min-height: 80px;
-      resize: vertical;
-      width: 100%;
-    }
-  }
-
   .container {
     overflow-x: auto;
   }
 
-  table {
-    border-collapse: collapse;
-    margin-top: 10px;
-
-    th,
-    td {
-      border: 1px solid gray;
-      padding: 4px 8px;
-    }
-
-    th {
-      background-color: lightgray;
-    }
-
-    tr:nth-child(even) {
-      background-color: #f2f2f2;
-    }
+  .mb-2 {
+    margin-bottom: 8px;
   }
 }

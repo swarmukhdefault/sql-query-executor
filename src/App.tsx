@@ -1,61 +1,34 @@
-import React, { ChangeEvent, FunctionComponent, useState } from 'react';
+import React, { FunctionComponent, ReactElement, useState } from 'react';
 
-import { sqlQueryParser } from '@utils/helpers';
-import MockClient from '@services/MockClient';
+import TabbedPane from './components/TabbedPane';
+import QueryVisualiser, { QueryVisualiserProps } from './components/QueryVisualiser';
 
 import '@assets/styles/App.scss';
 
 const App: FunctionComponent = () => {
-  const [query, setQuery] = useState('');
-  const [records, setRecords] = useState([]);
+  const [currentTab, setCurrentTab] = useState(0);
+  const [tabCounter, setTabCounter] = useState(1);
+  const [tabs, setTabs] = useState<ReactElement<QueryVisualiserProps>[]>([<QueryVisualiser key={tabCounter} />]);
 
-  const updateQuery = (e: ChangeEvent<HTMLTextAreaElement>): void => setQuery(e.target.value);
+  const addTab = (): void => {
+    const newTabCounter = tabCounter + 1;
 
-  const doExecuteQuery = (): void => {
-    try {
-      const p = sqlQueryParser(query);
-      MockClient.getRecords(p.dataSource, p.fields).then(setRecords);
-    } catch (e) {
-      // TODO: display error
-    }
+    setTabCounter(newTabCounter);
+    setTabs([...tabs, <QueryVisualiser key={newTabCounter} />]);
   };
+  const removeTab = (index: number): void => setTabs(tabs.filter((_, idx: number) => idx !== index));
 
   return (
     <>
       <h1>SQL Query Executor</h1>
-      <div>
-        <div id='query-input-form'>
-          <label htmlFor='input-query'>Query (case-insensitive)</label>
-          <textarea id='input-query' onChange={updateQuery}>
-            {query}
-          </textarea>
-        </div>
-        <button onClick={doExecuteQuery}>Execute</button>
-      </div>
-      <div className='container'>
-        {records.length === 0 ? (
-          <div>No data!</div>
-        ) : (
-          <table>
-            <thead>
-              <tr>
-                {Object.keys(records[0]).map((key: string, idx: number) => (
-                  <th key={idx}>{key}</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {records.map((record, idx: number) => (
-                <tr key={idx}>
-                  {Object.values(record).map((value: any, idx2: number) => (
-                    <td key={idx2}>{value}</td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        )}
-      </div>
+      <TabbedPane<QueryVisualiserProps>
+        ariaLabel='Query runner tabs'
+        currentTabIndex={currentTab}
+        tabs={tabs}
+        setCurrentTab={setCurrentTab}
+        addTab={addTab}
+        removeTab={removeTab}
+      />
     </>
   );
 };

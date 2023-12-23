@@ -1,9 +1,9 @@
 export const enum DataSource {
-  CATEGORIES = 'CATEGORIES'
-  // CUSTOMERS = "CUSTOMERS",
-  // EMPLOYEES = "EMPLOYEES",
-  // ORDER_DETAILS = "ORDER_DETAILS",
-  // ORDERS = "ORDERS",
+  CATEGORIES = 'CATEGORIES',
+  CUSTOMERS = 'CUSTOMERS',
+  EMPLOYEES = 'EMPLOYEES',
+  PRODUCTS = 'PRODUCTS',
+  SUPPLIERS = 'SUPPLIERS'
 }
 
 export interface ParsedDataSource {
