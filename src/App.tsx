@@ -1,7 +1,7 @@
 import React, { FunctionComponent, ReactElement, useState } from 'react';
 
-import TabbedPane from './components/TabbedPane';
-import QueryVisualiser, { QueryVisualiserProps } from './components/QueryVisualiser';
+import TabbedPane from '@components/TabbedPane';
+import QueryVisualiser, { QueryVisualiserProps } from '@components/QueryVisualiser';
 
 import '@assets/styles/App.scss';
 
