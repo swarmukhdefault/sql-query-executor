@@ -23,17 +23,17 @@ const TabbedPane = <T,>({
   <div className='tabbed-pane'>
     <div className='container mb-2'>
       <div role='tablist' aria-label={ariaLabel}>
-        {tabs.map((_, idx: number) => (
+        {tabs.map((tabItem, idx: number) => (
           <div
-            key={idx}
+            key={tabItem.key}
             role='tab'
-            id={`tab-${idx}`}
+            id={`tab-${tabItem.key}`}
             aria-selected='true'
-            aria-controls={`panel-${idx}`}
+            aria-controls={`panel-${tabItem.key}`}
             tabIndex={idx === currentTabIndex ? 0 : 1}
             onClick={(): void => setCurrentTab(idx)}
           >
-            <span>Query {idx + 1}</span>
+            <span>Query {Number(tabItem.key) + 1}</span>
             <button className='close-tab' onClick={(): void => removeTab(idx)}>
               &#10799;
             </button>
@@ -46,11 +46,11 @@ const TabbedPane = <T,>({
     </div>
     {tabs.map((tabItem, idx: number) => (
       <div
-        key={idx}
+        key={tabItem.key}
         role='tabpanel'
-        id={`panel-${idx}`}
+        id={`panel-${tabItem.key}`}
         tabIndex={0}
-        aria-labelledby={`tab-${idx}`}
+        aria-labelledby={`tab-${tabItem.key}`}
         hidden={idx !== currentTabIndex}
       >
         {tabItem}
