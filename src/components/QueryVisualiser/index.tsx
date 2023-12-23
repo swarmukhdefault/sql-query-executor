@@ -29,7 +29,9 @@ const QueryVisualiser: FunctionComponent<QueryVisualiserProps> = () => {
           <label htmlFor='input-query'>Query (case-insensitive)</label>
           <textarea id='input-query' onChange={updateQuery} value={query} />
         </div>
-        <button onClick={doExecuteQuery}>Execute</button>
+        <button onClick={doExecuteQuery} className='primary'>
+          Execute Query
+        </button>
       </div>
       <div className='container'>
         {records.length === 0 ? (

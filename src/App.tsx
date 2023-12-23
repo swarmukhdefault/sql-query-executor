@@ -24,6 +24,8 @@ const App: FunctionComponent = () => {
       <TabbedPane<QueryVisualiserProps>
         ariaLabel='Query runner tabs'
         currentTabIndex={currentTab}
+        newTabLabel='New Query'
+        closeTabLabel='Close Query'
         tabs={tabs}
         setCurrentTab={setCurrentTab}
         addTab={addTab}

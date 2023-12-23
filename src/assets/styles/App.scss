@@ -13,4 +13,29 @@
   .mb-2 {
     margin-bottom: 8px;
   }
+
+  .mr-2 {
+    margin-right: 8px;
+  }
+
+  .mt-2 {
+    margin-top: 8px;
+  }
+
+  button {
+    border: 1px solid gray;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 8px 12px;
+  }
+
+  button.danger {
+    background-color: lightcoral;
+    border: 1px solid crimson;
+  }
+
+  button.primary {
+    background-color: lightblue;
+    border: 1px solid deepskyblue;
+  }
 }
