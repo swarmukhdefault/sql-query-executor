@@ -1,22 +1,12 @@
-export interface RouteObject {
-  handle?: {
-    crumb: string;
-  };
+export const enum DataSource {
+  CATEGORIES = 'CATEGORIES'
+  // CUSTOMERS = "CUSTOMERS",
+  // EMPLOYEES = "EMPLOYEES",
+  // ORDER_DETAILS = "ORDER_DETAILS",
+  // ORDERS = "ORDERS",
 }
 
-export interface LoggedInUser {
-  id: string;
-  personalDetails: {
-    name: {
-      first: string;
-      middle?: string;
-      last: string;
-    };
-    emailID: string;
-    phoneNumber: string;
-  };
-  tokens: {
-    accessToken: string;
-    refreshToken: string;
-  };
+export interface ParsedDataSource {
+  dataSource: DataSource;
+  fields: string[] | 'all';
 }
