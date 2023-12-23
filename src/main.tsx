@@ -7,6 +7,6 @@ import '@assets/styles/index.scss';
 
 ReactDOM.createRoot(document.getElementById('app')!).render(
   <StrictMode>
-      <App />
+    <App />
   </StrictMode>
 );
