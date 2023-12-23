@@ -1,7 +1,7 @@
 import React, { ChangeEvent, FunctionComponent, useState } from 'react';
 
-import { stringQueryParser } from '@utils/helpers';
-import MockServer from '@services/MockServer';
+import { sqlQueryParser } from '@utils/helpers';
+import MockClient from '@services/MockClient';
 
 import '@assets/styles/App.scss';
 
@@ -13,8 +13,8 @@ const App: FunctionComponent = () => {
 
   const doExecuteQuery = (): void => {
     try {
-      const p = stringQueryParser(query);
-      MockServer.getRecords(p.dataSource, p.fields).then(setRecords);
+      const p = sqlQueryParser(query);
+      MockClient.getRecords(p.dataSource, p.fields).then(setRecords);
     } catch (e) {
       // TODO: display error
     }

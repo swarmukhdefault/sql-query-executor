@@ -6,9 +6,9 @@ const DATA: Record<keyof typeof DataSource, any> = {
   CATEGORIES: categories
 };
 
-const MockServer = {
+const MockClient = {
   getRecords: (dataSource: DataSource, fields: string[] | 'all'): Record<string, any> =>
     Promise.resolve(DATA[dataSource])
 };
 
-export default MockServer;
+export default MockClient;
