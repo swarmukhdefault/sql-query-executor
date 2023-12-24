@@ -29,13 +29,37 @@
     padding: 8px 12px;
   }
 
+  button:hover {
+    background-color: rgb(219, 219, 219);
+  }
+
+  button:active {
+    background-color: rgb(166, 164, 164);
+  }
+
   button.danger {
     background-color: lightcoral;
     border: 1px solid crimson;
   }
 
+  button.danger:hover {
+    background-color: rgb(254, 133, 133);
+  }
+
+  button.danger:active {
+    background-color: rgb(210, 110, 110);
+  }
+
   button.primary {
     background-color: lightblue;
     border: 1px solid deepskyblue;
+  }
+
+  button.primary:hover {
+    background-color: rgb(181, 225, 239);
+  }
+
+  button.primary:active {
+    background-color: rgb(164, 202, 213);
   }
 }
