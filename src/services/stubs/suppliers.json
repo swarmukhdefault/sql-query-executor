@@ -1,4 +1,19 @@
-[
+{
+  "schema": {
+    "supplierID": "NUMBER",
+    "companyName": "STRING",
+    "contactName": "STRING",
+    "contactTitle": "STRING",
+    "address": "STRING",
+    "city": "STRING",
+    "region": "STRING",
+    "postalCode": "STRING",
+    "country": "STRING",
+    "phone": "STRING",
+    "fax": "STRING",
+    "homePage": "STRING"
+  },
+  "records": [
     {
       "supplierID": 1,
       "companyName": "Exotic Liquids",
@@ -406,3 +421,4 @@
       "homePage": "NULL"
     }
   ]
+}

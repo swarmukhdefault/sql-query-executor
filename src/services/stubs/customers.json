@@ -1,4 +1,18 @@
-[
+{
+  "schema": {
+    "customerID": "UUID",
+    "companyName": "STRING",
+    "contactName": "STRING",
+    "contactTitle": "STRING",
+    "address": "STRING",
+    "city": "STRING",
+    "region": "STRING",
+    "postalCode": "NUMBER",
+    "country": "STRING",
+    "phone": "STRING",
+    "fax": "STRING"
+  },
+  "records": [
     {
       "customerID": "ALFKI",
       "companyName": "Alfreds Futterkiste",
@@ -260,3 +274,4 @@
       "fax": "7675-3426"
     }
   ]
+}

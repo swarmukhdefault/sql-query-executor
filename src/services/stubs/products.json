@@ -1,4 +1,17 @@
-[
+{
+  "schema": {
+    "productID": "NUMBER",
+    "productName": "STRING",
+    "supplierID": "NUMBER",
+    "categoryID": "NUMBER",
+    "quantityPerUnit": "STRING",
+    "unitPrice": "NUMBER",
+    "unitsInStock": "NUMBER",
+    "unitsOnOrder": "NUMBER",
+    "reorderLevel": "NUMBER",
+    "discontinued": "NUMBER"
+  },
+  "records": [
     {
       "productID": 1,
       "productName": "Chai",
@@ -924,3 +937,4 @@
       "discontinued": 0
     }
   ]
+}
