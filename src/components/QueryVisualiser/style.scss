@@ -13,6 +13,11 @@ div.query-visualiser {
     }
   }
 
+  #control-plane {
+    display: flex;
+    justify-content: space-between;
+  }
+
   table {
     border-collapse: collapse;
     margin-top: 10px;
@@ -29,6 +34,44 @@ div.query-visualiser {
 
     tr:nth-child(even) {
       background-color: #f2f2f2;
+    }
+  }
+
+  #history-modal {
+    max-width: 480px;
+    min-height: 480px;
+    position: relative;
+
+    hgroup {
+      text-align: center;
+
+      h2,
+      h4,
+      h5 {
+        margin: 0;
+      }
+    }
+
+    ol {
+      padding-inline-start: 15px;
+
+      li {
+        background-color: lightgray;
+        border-radius: 4px;
+        cursor: pointer;
+
+        pre {
+          overflow-x: auto;
+          padding: 6px 8px;
+        }
+      }
+    }
+
+    #history-footer {
+      position: sticky;
+      bottom: 0;
+      width: 100%;
+      background-color: white;
     }
   }
 }

@@ -45,3 +45,6 @@ export const sqlQueryParser = (query: string): ParsedDataSource => {
     throw new Error('Invalid expression');
   }
 };
+
+// discard the promise
+export const copyTextToClipboard = (text: string): Promise<void> => navigator.clipboard.writeText(text);
