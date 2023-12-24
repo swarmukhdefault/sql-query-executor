@@ -1,6 +1,7 @@
 import React, { ChangeEvent, FunctionComponent, memo, useEffect, useState } from 'react';
 
 import Modal from '@components/Modal';
+import MessageBox from '@components/MessageBox';
 import { DataSource, DbField } from '@utils/models';
 import MockClient from '../../services/MockClient';
 
@@ -120,7 +121,7 @@ const QueryAssistant: FunctionComponent<QueryAssistantProps> = ({
             </table>
           </>
         ) : (
-          <div className='message danger'>No data-source selected yet!</div>
+          <MessageBox variant='info' title='Update DataSource' message={<span>No data-source selected yet!</span>} />
         )}
       </div>
       <div id='qa-footer'>

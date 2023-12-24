@@ -1,0 +1,30 @@
+div.message-box {
+  border-radius: 4px;
+  border: 2px dotted darkgray;
+  background-color: lightgrey;
+  padding: 6px 10px;
+  border-left: 3px solid grey;
+
+  h3 {
+    margin: 0 0 6px 0;
+    text-shadow: black;
+  }
+
+  &.error {
+    background-color: lightcoral;
+    border-color: crimson;
+
+    h3 {
+      color: darkred;
+    }
+  }
+
+  &.info {
+    background-color: lightblue;
+    border-color: deepskyblue;
+
+    h3 {
+      color: dodgerblue;
+    }
+  }
+}
