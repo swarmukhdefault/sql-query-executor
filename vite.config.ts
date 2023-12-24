@@ -9,6 +9,7 @@ export default defineConfig(({ mode }) => {
 
   // ensure both properties and nested properties are in ascending order
   return {
+    base: './',
     build: {
       outDir: 'build',
       sourcemap: env.VITE_GENERATE_SOURCEMAP
