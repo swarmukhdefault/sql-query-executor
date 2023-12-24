@@ -1,4 +1,5 @@
-export const enum DataSource {
+/* eslint-disable no-restricted-syntax */
+export enum DataSource {
   CATEGORIES = 'CATEGORIES',
   CUSTOMERS = 'CUSTOMERS',
   EMPLOYEES = 'EMPLOYEES',
