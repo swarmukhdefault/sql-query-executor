@@ -65,6 +65,14 @@ div.query-visualiser {
           padding: 6px 8px;
         }
       }
+
+      li:hover {
+        background-color: rgb(232, 230, 230);
+      }
+
+      li:active {
+        background-color: rgb(188, 184, 184);
+      }
     }
 
     #history-footer {
