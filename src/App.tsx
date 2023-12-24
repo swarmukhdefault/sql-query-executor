@@ -14,9 +14,18 @@ const App: FunctionComponent = () => {
     const newTabCounter = tabCounter + 1;
 
     setTabCounter(newTabCounter);
-    setTabs([...tabs, <QueryVisualiser key={newTabCounter} />]);
+    setTabs((currentTabs) => [...currentTabs, <QueryVisualiser key={newTabCounter} />]);
   };
-  const removeTab = (index: number): void => setTabs(tabs.filter((_, idx: number) => idx !== index));
+  const removeTab = (index: number): void => {
+    const newTabList = tabs.filter((_, idx: number) => idx !== index);
+
+    if (newTabList.length === 0) {
+      setTabs([]);
+      addTab();
+    } else {
+      setTabs(newTabList);
+    }
+  };
 
   return (
     <>
