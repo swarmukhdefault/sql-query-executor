@@ -18,11 +18,11 @@ const MockClient = {
   getDataSources: async (): Promise<string[]> => await Object.values(DataSource),
   getFields: async (dataSource: DataSource): Promise<Record<string, string>> => await DATA[dataSource].schema,
   getRecords: async (dataSource: DataSource, fields: string[] | 'all'): Promise<Record<string, any>> =>
-    (await fields) === 'all'
+    await (fields === 'all'
       ? DATA[dataSource].records
       : DATA[dataSource].records.map((record) =>
           Object.fromEntries(Object.entries(record).filter((entry) => fields.includes(entry[0])))
-        )
+        ))
 };
 
 export default MockClient;
