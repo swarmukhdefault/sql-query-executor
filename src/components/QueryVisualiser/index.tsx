@@ -1,5 +1,6 @@
 import React, { ChangeEvent, FunctionComponent, useState } from 'react';
 
+import QueryAssistant from '@components/QueryAssistant';
 import MockClient from '@services/MockClient';
 import { sqlQueryParser } from '@utils/helpers';
 
@@ -10,6 +11,7 @@ export interface QueryVisualiserProps {}
 const QueryVisualiser: FunctionComponent<QueryVisualiserProps> = () => {
   const [query, setQuery] = useState('');
   const [records, setRecords] = useState([]);
+  const [assistanceModalVisible, setAssistanceModalVisible] = useState(false);
 
   const updateQuery = (e: ChangeEvent<HTMLTextAreaElement>): void => setQuery(e.target.value);
 
@@ -29,9 +31,12 @@ const QueryVisualiser: FunctionComponent<QueryVisualiserProps> = () => {
           <label htmlFor='input-query'>Query (case-insensitive)</label>
           <textarea id='input-query' onChange={updateQuery} value={query} />
         </div>
-        <button onClick={doExecuteQuery} className='primary'>
-          Execute Query
-        </button>
+        <div className='mt-2 mb-2'>
+          <button onClick={doExecuteQuery} className='primary mr-2'>
+            Execute Query
+          </button>
+          <button onClick={(): void => setAssistanceModalVisible(true)}>Get Assistance</button>
+        </div>
       </div>
       <div className='container'>
         {records.length === 0 ? (
@@ -57,6 +62,12 @@ const QueryVisualiser: FunctionComponent<QueryVisualiserProps> = () => {
           </table>
         )}
       </div>
+      <QueryAssistant
+        resetOnClose
+        visible={assistanceModalVisible}
+        closeAssistant={(): void => setAssistanceModalVisible(false)}
+        insertSql={(sql: string): void => setQuery(sql)}
+      />
     </div>
   );
 };
